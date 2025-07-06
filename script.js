@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (!prefersReduce) {
         initEnergy();
+        initWaves();
         initOrb();
     }
 
@@ -61,6 +62,43 @@ function initEnergy() {
         requestAnimationFrame(update);
     }
     update();
+}
+
+function initWaves() {
+    var canvas = document.getElementById('wave-canvas');
+    if (!canvas || !canvas.getContext) return;
+    var ctx = canvas.getContext('2d');
+    var w, h;
+    var waves = [];
+
+    function resize() {
+        w = canvas.width = window.innerWidth;
+        h = canvas.height = window.innerHeight;
+        waves = [
+            { y: h * 0.3, amp: 20, speed: 0.6, off: Math.random() * Math.PI * 2 },
+            { y: h * 0.5, amp: 25, speed: 0.4, off: Math.random() * Math.PI * 2 },
+            { y: h * 0.7, amp: 30, speed: 0.5, off: Math.random() * Math.PI * 2 }
+        ];
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    function draw() {
+        ctx.clearRect(0, 0, w, h);
+        ctx.strokeStyle = 'rgba(111,224,255,0.25)';
+        ctx.lineWidth = 2;
+        waves.forEach(function(wv) {
+            wv.off += 0.01 * wv.speed;
+            ctx.beginPath();
+            for (var x = 0; x <= w; x++) {
+                var y = wv.y + Math.sin(x * 0.01 + wv.off) * wv.amp;
+                if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+        });
+        requestAnimationFrame(draw);
+    }
+    draw();
 }
 
 function initOrb() {

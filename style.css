@@ -16,7 +16,8 @@ html, body {
 
 body {
     background: var(--color-navy);
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 /* Misty background animation */
@@ -36,6 +37,7 @@ body::before {
 }
 
 #energy-canvas,
+#wave-canvas,
 #orb-canvas {
     position: fixed;
     top: 0;
@@ -127,6 +129,44 @@ body::before {
         transparent 6px
     );
     animation: flow 15s linear infinite;
+}
+
+.cta-panel {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(8px);
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(111,224,255,0.15);
+    transition: box-shadow 0.3s ease;
+    margin-top: 1.5rem;
+}
+
+.cta-panel:hover {
+    box-shadow: 0 0 25px rgba(111,224,255,0.4);
+}
+
+.teaser-section {
+    padding: 4rem 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.teaser-section .silhouettes {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.teaser-section .shape {
+    width: 120px;
+    height: 60px;
+    border-radius: 50% 50% 10% 10%;
+    background: rgba(255,255,255,0.05);
+    filter: blur(6px);
 }
 
 @keyframes flow {
