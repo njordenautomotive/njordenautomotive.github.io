@@ -1,1 +1,0 @@
-# njordenautomotive.github.io
