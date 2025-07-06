@@ -76,17 +76,14 @@ function initOrb() {
     window.addEventListener('resize', resize);
 
     var orbs = [];
-    var rows = 3;
-    var cols = 3;
-    for (var i = 0; i < rows; i++) {
-        for (var j = 0; j < cols; j++) {
-            orbs.push({
-                x: (j + 0.5) / cols,
-                y: (i + 0.5) / rows,
-                base: 30 + Math.random() * 20,
-                t: Math.random() * Math.PI * 2
-            });
-        }
+    var orbCount = 9;
+    for (var i = 0; i < orbCount; i++) {
+        orbs.push({
+            x: Math.random(),
+            y: Math.random(),
+            base: 30 + Math.random() * 20,
+            t: Math.random() * Math.PI * 2
+        });
     }
 
     function draw() {
