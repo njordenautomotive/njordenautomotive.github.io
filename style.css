@@ -1,14 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root {
+    --color-navy: #0a0f1f;
+    --color-cyan: #6fe0ff;
+    --color-white: #f1f8ff;
+    --color-mist: rgba(255,255,255,0.1);
+}
 
 html, body {
     height: 100%;
     margin: 0;
-    font-family: 'Playfair Display', serif;
-    color: #fff;
+    font-family: 'Inter', sans-serif;
+    color: var(--color-white);
 }
 
 body {
-    background: #000;
+    background: var(--color-navy);
     overflow: hidden;
 }
 
@@ -28,10 +35,22 @@ body::before {
     z-index: -1;
 }
 
+#energy-canvas,
+#orb-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -2;
+}
+
 @keyframes drift {
     from { transform: translate3d(-25%, -25%, 0) scale(1); }
     to { transform: translate3d(-50%, -50%, 0) scale(1.5); }
 }
+
 
 .container {
     height: 100%;
@@ -44,25 +63,49 @@ body::before {
     animation: fadeIn 2s ease-out forwards;
 }
 
+.hero {
+    min-height: 100vh;
+}
+
+.glass {
+    background: rgba(0,0,0,0.4);
+    border: 1px solid var(--color-mist);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
+
 .title {
     font-size: 4rem;
     margin: 0;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
 }
+
 
 .subtitle {
     font-size: 1.5rem;
     margin-top: 0.5rem;
+    letter-spacing: 2px;
 }
 
-.buttons {
-    margin-top: 2rem;
-}
+
 
 .newsletter-btn {
     position: fixed;
@@ -71,24 +114,51 @@ body::before {
     transform: translateX(-50%);
 }
 
+.cta-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: repeating-linear-gradient(
+        -45deg,
+        rgba(255,255,255,0.05) 0,
+        rgba(255,255,255,0.05) 2px,
+        transparent 2px,
+        transparent 6px
+    );
+    animation: flow 15s linear infinite;
+}
+
+@keyframes flow {
+    from { background-position: 0 0; }
+    to { background-position: 200px 0; }
+}
+
+
 .btn {
     background: rgba(255,255,255,0.1);
     border: 1px solid rgba(255,255,255,0.5);
-    color: #fff;
+    color: var(--color-white);
     padding: 0.75rem 1.5rem;
     text-decoration: none;
     margin: 0 0.5rem;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
 
 .btn:hover {
     background: rgba(255,255,255,0.3);
+    box-shadow: 0 0 10px var(--color-cyan);
+}
+
+.cta-btn {
+    font-size: 1.25rem;
 }
 
 .inner-page .title {
     font-size: 3rem;
 }
+
 
 .inner-page {
     padding: 4rem 1rem;
