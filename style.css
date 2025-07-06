@@ -66,7 +66,7 @@ body::before {
 
 .newsletter-btn {
     position: fixed;
-    bottom: 1rem;
+    bottom: 0.5rem;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -92,4 +92,10 @@ body::before {
 
 .inner-page {
     padding: 4rem 1rem;
+}
+
+.inner-page .content {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    text-align: left;
 }
