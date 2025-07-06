@@ -120,11 +120,6 @@ body.loaded::before {
     letter-spacing: 2px;
 }
 
-.hero-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 .logo {
     display: block;
