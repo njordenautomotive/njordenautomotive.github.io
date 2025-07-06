@@ -18,11 +18,34 @@
       max-width: 1200px;
       margin: 0 auto;
     }
+    .logo-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .logo-header img {
+      width: 100px;
+      height: auto;
+      filter: brightness(0) invert(1);
+      margin-bottom: 1rem;
+    }
+    .logo-header h1 {
+      font-size: 2.75rem;
+      margin: 0;
+    }
+    .logo-header h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #ccc;
+      margin-top: 0.5rem;
+    }
     .hero {
       background: url('hero-image.jpg') center/cover no-repeat;
       color: white;
       text-align: center;
-      padding: 8rem 2rem;
+      padding: 6rem 2rem;
     }
     .hero h1 {
       font-size: 3rem;
@@ -68,6 +91,12 @@
   </style>
 </head>
 <body>
+  <div class="logo-header">
+    <img src="/mnt/data/NJORDEN logo - no background.png" alt="Njorden Logo" />
+    <h1>Njorden</h1>
+    <h2>Hydrogen. Heritage. Harmony.</h2>
+  </div>
+
   <header class="hero">
     <h1>Luxury That Leaves Nothing Behind</h1>
     <p>In a world full of noise, you’re looking for silence that speaks volumes. Njorden brings together hydrogen technology, Nordic elegance, and sustainability—so you can drive with purpose, not just power.</p>
@@ -107,7 +136,6 @@
     <h2>You’re Not Alone in Wanting Something Better</h2>
     <blockquote>“Hydrogen. Heritage. Harmony.”</blockquote>
     <blockquote>“Designed in Norway. Made for a future where silence leads, and sustainability powers every journey.”</blockquote>
-    <!-- Future logos or testimonial images can go here -->
   </section>
 
   <section>
