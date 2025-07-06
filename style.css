@@ -64,6 +64,13 @@ body::before {
     margin-top: 2rem;
 }
 
+.newsletter-btn {
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .btn {
     background: rgba(255,255,255,0.1);
     border: 1px solid rgba(255,255,255,0.5);
