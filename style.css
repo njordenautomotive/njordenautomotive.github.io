@@ -162,10 +162,17 @@ body::before {
 
 .inner-page {
     padding: 4rem 1rem;
+    height: auto;
+    min-height: 100vh;
+    justify-content: flex-start;
 }
 
 .inner-page .content {
     max-width: 600px;
     margin: 0 auto 2rem;
     text-align: left;
+}
+
+.inner-page .btn {
+    margin: 0.5rem 0;
 }
