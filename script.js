@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+    document.body.classList.remove('no-js');
     var overlay = document.getElementById('transition-overlay');
     var newsletterBtn = document.getElementById('newsletter');
     if (newsletterBtn) {
@@ -15,18 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
         initOrb();
     }
 
-    var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.fade-in').forEach(function(el) {
-        observer.observe(el);
-    });
 
     if (overlay) {
         setTimeout(function () {
