@@ -67,6 +67,7 @@ function initOrb() {
     var canvas = document.getElementById('orb-canvas');
     if (!canvas || !canvas.getContext) return;
     var ctx = canvas.getContext('2d');
+
     function resize() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
@@ -74,20 +75,35 @@ function initOrb() {
     resize();
     window.addEventListener('resize', resize);
 
-    var t = 0;
+    var orbs = [];
+    var rows = 3;
+    var cols = 3;
+    for (var i = 0; i < rows; i++) {
+        for (var j = 0; j < cols; j++) {
+            orbs.push({
+                x: (j + 0.5) / cols,
+                y: (i + 0.5) / rows,
+                base: 30 + Math.random() * 20,
+                t: Math.random() * Math.PI * 2
+            });
+        }
+    }
+
     function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        var radius = 40 + 10 * Math.sin(t);
-        var x = canvas.width / 2;
-        var y = canvas.height * 0.2;
-        var grad = ctx.createRadialGradient(x, y, radius * 0.2, x, y, radius);
-        grad.addColorStop(0, 'rgba(111,224,255,0.8)');
-        grad.addColorStop(1, 'rgba(111,224,255,0)');
-        ctx.fillStyle = grad;
-        ctx.beginPath();
-        ctx.arc(x, y, radius, 0, Math.PI * 2);
-        ctx.fill();
-        t += 0.02;
+        orbs.forEach(function(o) {
+            o.t += 0.02;
+            var radius = o.base + 10 * Math.sin(o.t);
+            var x = o.x * canvas.width;
+            var y = o.y * canvas.height;
+            var grad = ctx.createRadialGradient(x, y, radius * 0.2, x, y, radius);
+            grad.addColorStop(0, 'rgba(111,224,255,0.8)');
+            grad.addColorStop(1, 'rgba(111,224,255,0)');
+            ctx.fillStyle = grad;
+            ctx.beginPath();
+            ctx.arc(x, y, radius, 0, Math.PI * 2);
+            ctx.fill();
+        });
         requestAnimationFrame(draw);
     }
     draw();
