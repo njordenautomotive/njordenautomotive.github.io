@@ -101,6 +101,11 @@ body.loaded::before {
     to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes fadeInLogo {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 
 .title {
     font-size: 4rem;
@@ -113,6 +118,30 @@ body.loaded::before {
     font-size: 1.5rem;
     margin-top: 0.5rem;
     letter-spacing: 2px;
+}
+
+
+.logo {
+    display: block;
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    margin: 0 auto 1rem;
+    image-rendering: auto;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInLogo 1.2s ease forwards;
+    transition: filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo:hover {
+    filter: drop-shadow(0 0 8px rgba(255,255,255,0.6));
+}
+
+@media (max-width: 600px) {
+    .logo {
+        max-width: 100px;
+    }
 }
 
 
