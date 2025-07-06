@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+    document.body.classList.remove('no-js');
     var overlay = document.getElementById('transition-overlay');
     var newsletterBtn = document.getElementById('newsletter');
     if (newsletterBtn) {

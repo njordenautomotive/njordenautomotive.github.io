@@ -96,6 +96,22 @@ body.loaded::before {
     transform: translateY(0);
 }
 
+/* Fallback when JavaScript is unavailable */
+.no-js #transition-overlay {
+    display: none;
+}
+
+.no-js .fade-in {
+    opacity: 1;
+    transform: none;
+}
+
+.no-js .logo {
+    animation: none;
+    opacity: 1;
+    transform: none;
+}
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
