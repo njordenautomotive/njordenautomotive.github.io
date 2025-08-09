@@ -26,7 +26,7 @@ export function Nav() {
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         {/* Replace this img with your real logo when ready */}
         <a href="/" className="flex items-center gap-3">
-          <img src="/images/njorden-logo-white.png" alt="Njorden" className="h-12 w-auto" />
+          <img src="/images/njorden-logo-white.png" alt="Njorden" className="h-20 w-auto" />
           <span className="sr-only">Njorden Automotive</span>
         </a>
 
