@@ -1,5 +1,7 @@
 import React from "react";
 
+'use client';
+
 export function Background() {
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-[#0a0b0d]">
