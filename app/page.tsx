@@ -83,7 +83,7 @@ function Models() {
         <p className="mt-3 text-white/70">Three design directions. One philosophy of flow. Crafted for the North, refined for the world.</p>
       </motion.div>
       <div className="mt-10 grid gap-6 md:grid-cols-3">
-        <ModelCard code="S1" title="Silent Saloon" note="Grand touring serenity" img="/images/s1.jpg" />
+        <ModelCard code="S1" title="Silent Saloon" note="Grand touring serenity" img="/images/s1.png" />
         <ModelCard code="V1" title="Vast SUV" note="Elegance, elevation, space" img="/images/v1.jpg" />
         <ModelCard code="M1" title="Modern MPV" note="Family, function, finesse" img="/images/m1.jpg" />
       </div>
