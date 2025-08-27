@@ -32,11 +32,11 @@ function Hero() {
       <Section className="pt-16 pb-20 sm:pt-24 sm:pb-24">
         <motion.div variants={fadeUp} initial="hidden" animate="show" className="flex flex-col items-center text-center">
           <Badge>Hydrogen • Heritage • Harmony</Badge>
-          <h1 className="mt-6 text-balance text-4xl font-semibold leading-tight text-white sm:text-5xl md:text-6xl">Silence in Motion.</h1>
-          <p className="mt-5 max-w-2xl text-pretty text-base text-white/70 sm:text-lg">Scandinavian luxury meets hydrogen innovation. Crafted for flow, built for the North. This is the beginning of Njorden.</p>
+          <h1 className="mt-6 text-balance text-4xl font-semibold leading-tight text-white sm:text-5xl md:text-6xl">Future in Flow.</h1>
+          <p className="mt-5 max-w-2xl text-pretty text-base text-white/70 sm:text-lg">Minimalist hydrogen vehicles crafted for the modern North.</p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <Button className="rounded-2xl bg-cyan-300 text-[#07303a] hover:bg-cyan-200">Explore Concepts <ArrowRight className="ml-2 h-4 w-4" /></Button>
-            <a className="rounded-2xl border border-white/30 bg-white/0 text-white hover:bg-white/10 px-4 py-2 text-sm" href="/heritage">Follow Our Journey</a>
+            <Button className="rounded-2xl bg-cyan-300 text-[#07303a] hover:bg-cyan-200">View Our Models <ArrowRight className="ml-2 h-4 w-4" /></Button>
+            <a className="rounded-2xl border border-white/30 bg-white/0 text-white hover:bg-white/10 px-4 py-2 text-sm" href="/heritage">Read Our Story</a>
           </div>
         </motion.div>
         <motion.div variants={pop} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} className="mt-14 rounded-3xl border border-white/10 bg-gradient-to-b from-white/5 to-white/0 p-2">
@@ -49,9 +49,9 @@ function Hero() {
           </div>
         </motion.div>
         <div className="mt-12 grid gap-4 sm:grid-cols-3">
-          <Pillar icon={<Droplets className="h-5 w-5" />} title="Hydrogen" desc="Clean energy architecture designed around fuel cells and recyclable materials." />
-          <Pillar icon={<Mountain className="h-5 w-5" />} title="Heritage" desc="Nordic craft, minimalism, and timeless forms—quiet confidence in every line." />
-          <Pillar icon={<Wind className="h-5 w-5" />} title="Harmony" desc="Aerodynamics, acoustics, and comfort tuned for long-range serenity." />
+          <Pillar icon={<Droplets className="h-5 w-5" />} title="Clean Propulsion" desc="Hydrogen fuel cells delivering emissions-free performance." />
+          <Pillar icon={<Mountain className="h-5 w-5" />} title="Nordic Roots" desc="Design inspired by Scandinavian landscapes and craftsmanship." />
+          <Pillar icon={<Wind className="h-5 w-5" />} title="Silent Comfort" desc="Cabins tuned for quiet rides and long-distance ease." />
         </div>
       </Section>
     </div>
