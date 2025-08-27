@@ -31,15 +31,15 @@ export function Nav() {
         </a>
 
         <nav className="hidden items-center gap-6 md:flex">
-          <a href="/models" className="text-sm text-white/80 hover:text-white">Models</a>
-          <a href="/heritage" className="text-sm text-white/80 hover:text-white">Heritage</a>
-          <a href="/sustainability" className="text-sm text-white/80 hover:text-white">Sustainability</a>
-          <a href="/newsletter" className="text-sm text-white/80 hover:text-white">Journal</a>
+          <a href="/models" className="text-sm text-white/80 hover:text-white">Vehicles</a>
+          <a href="/heritage" className="text-sm text-white/80 hover:text-white">Legacy</a>
+          <a href="/sustainability" className="text-sm text-white/80 hover:text-white">Eco Vision</a>
+          <a href="/newsletter" className="text-sm text-white/80 hover:text-white">Blog</a>
         </nav>
 
         <div className="flex items-center gap-2">
           <a className="rounded-2xl bg-white/90 text-[#0a0b0d] hover:bg-white px-4 py-2 text-sm" href="/newsletter">
-            Join Newsletter
+            Subscribe Now
           </a>
         </div>
       </div>
@@ -56,10 +56,10 @@ export function Footer() {
           <span className="text-sm tracking-wide text-white/70">© {new Date().getFullYear()} Njorden Automotive</span>
         </div>
         <div className="flex items-center gap-6 text-sm text-white/70">
-          <a href="/heritage" className="hover:text-white">Heritage</a>
-          <a href="/sustainability" className="hover:text-white">Sustainability</a>
-          <a href="/models" className="hover:text-white">Models</a>
-          <a href="/newsletter" className="hover:text-white">Newsletter</a>
+          <a href="/heritage" className="hover:text-white">Legacy</a>
+          <a href="/sustainability" className="hover:text-white">Eco Vision</a>
+          <a href="/models" className="hover:text-white">Vehicles</a>
+          <a href="/newsletter" className="hover:text-white">Subscribe</a>
         </div>
       </div>
     </footer>
